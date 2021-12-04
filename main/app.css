@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    wdith: 100%;
+    height: 100vh;
+    background-color: #252525;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  body * {
+    z-index: 1;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin: -45px 0 40px;
+  }
+  
+  .year {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12rem;
+    mix-blend-mode: difference;
+    opacity: .1;
+    z-index: 0;
+    transition: all .5s;
+  }
+  
+  .year:hover {
+    opacity: .7;
+    color: salmon;
+  }
+  
+  h1:hover {
+    color: salmon;
+  }
+  
+  .countdown {
+  /*   display: flex; */
+    display: none;
+    jusify-content: center;
+    transform: scale(1.2);
+  }
+  
+  .time {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 15px;
+    padding: 10px;
+    background: rgba(250, 129, 114, .8);
+    border-radius: 5px;
+    mix-blend-mode: multiple;
+  }
+  
+  .time h2 {
+    font-size: 2rem;
+  }
+  
+  .time span {
+    font-size: .7rem;
+  }
+  
+  #loading {
+    position: relative;
+    font-size: 3rem;
+  }
+  
+  #loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, .8);
+    width: 30px;
+    height: 100%;
+    mix-blend-mode: difference;
+    animation: loading 3s linear infinite;
+  }
+  
+  @keyframes loading {
+    0% {
+      left: 0%;
+    }
+    
+      50% {
+      left: calc(100% - 20px);
+    }
+    
+      100% {
+      left: 0%;
+    }
+  }
+  
+  
+  @media screen and (max-width: 500px) {
+    h1 {
+      font-size: 4rem;
+    }
+    
+    .countdown {
+      padding: 0 4rem;
+  /*     display: block; */
+    }
+    
+    .time {
+      margin: 5px auto;
+    }
+    
+    .time h2 {
+      font-size: 1.6rem;
+    }
+    
+    .time span {
+      font-size: .5rem;
+    }
+  }
+  
